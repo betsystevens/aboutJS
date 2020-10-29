@@ -24,7 +24,7 @@ let uniqueInteger2 = function() {
   return function() {return counter++; };
 };
 ```
- * There is one invocation of outer function causing the variable, ```counter```, to be bound once.  
+ * There is one invocation of the outer function causing the variable, ```counter``` to be bound once.  
 ```
 let unique = uniqueInteger2();
 unique();   0
@@ -32,9 +32,9 @@ unique();   1
 unique();   2
 ```
 
- * Below shows immediately invoking the inner function after invoking the outer function.   
- * This surprised me as I was experimenting with these functions.
- * Counter is declared and initialized with each call to the outer function.  
+ * Below the inner function is immediately invoked after the outer function is called.   
+ * The results surprised me as I was experimenting with these functions.
+ * ```counter``` is declared and initialized with each call to the outer function.  
  * Then the inner function is immediately invoked. 
 ```
 uniqueInteger2()();   0
