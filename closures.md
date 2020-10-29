@@ -1,11 +1,12 @@
  ## Closure & Variable Binding Examples
 
- * Starting with a closure as an IIFE  
+ * Starting with a closure as an IIFE in the snippet below.
+ * The outer function is run and it returns the inner function to ```uniqueIntegerInner```.
  * The variable, ```counter``` becomes bound to the inner function when it is returned.  
- * The outer function is executed once and  ```counter``` is declared and initialized.  
+ * The execution of the outer function is where  ```counter``` is declared and initialized.  
  * The inner function is returned with ```counter``` bound to it.
 ```
-let uniqueInteger = (function() {
+let uniqueIntegerInner = (function() {
   let counter = 0;
   return function() {return counter++; };
 }());
@@ -13,33 +14,33 @@ let uniqueInteger = (function() {
 
  * Invoking the inner function multiple times, illustrates the closure over the outer function's variable.  
 ```
-uniqueInteger();   0
-uniqueInteger();   1
-uniqueInteger();   2
+uniqueIntegerInner();   0
+uniqueIntegerInner();   1
+uniqueIntegerInner();   2
 ```
  * Same results here, not using an IIFE  
 ```
-let uniqueInteger2 = function() { 
+let uniqueIntegerOuter = function() { 
   let counter = 0;
   return function() {return counter++; };
 };
 ```
- * There is one invocation of the outer function causing the variable, ```counter``` to be bound once.  
+ * There is one invocation of the outer function causing the variable, ```counter``` to be initialized and bound once.  
 ```
-let unique = uniqueInteger2();
-unique();   0
-unique();   1
-unique();   2
+let uniqueIntegerInner2 = uniqueIntegerOuter();
+uniqueIntegerInner2();   0
+uniqueIntegerInner2();   1
+uniqueIntegerInner2();   2
 ```
 
  * Below the inner function is immediately invoked after the outer function is called.   
  * The results surprised me as I was experimenting with these functions.
  * ```counter``` is declared and initialized with each call to the outer function.  
- * Then the inner function is immediately invoked. 
+ * The inner function is returned and immediately invoked. 
 ```
-uniqueInteger2()();   0
-uniqueInteger2()();   0
-uniqueInteger2()();   0
+uniqueIntegerOuter()();   0
+uniqueIntegerOuter()();   0
+uniqueIntegerOuter()();   0
 ```
 
  ## Free and Bound Variables
