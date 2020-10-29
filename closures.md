@@ -34,7 +34,6 @@ uniqueIntegerInner2();   2
 ```
 
  * Below the inner function is immediately invoked after the outer function is called.   
- * The results surprised me as I was experimenting with these functions.
  * ```counter``` is declared and initialized with each call to the outer function.  
  * The inner function is returned and immediately invoked. 
 ```
