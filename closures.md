@@ -28,18 +28,18 @@ let uniqueIntegerOuter = function() {
  * There is one invocation of the outer function causing the variable, ```counter``` to be initialized and bound once.  
 ```
 let uniqueIntegerInner2 = uniqueIntegerOuter();
-uniqueIntegerInner2();   0
-uniqueIntegerInner2();   1
-uniqueIntegerInner2();   2
+uniqueIntegerInner2();   => 0
+uniqueIntegerInner2();   => 1
+uniqueIntegerInner2();   => 2
 ```
 
  * Below the inner function is immediately invoked after the outer function is called.   
  * ```counter``` is declared and initialized with each call to the outer function.  
  * The inner function is returned and immediately invoked. 
 ```
-uniqueIntegerOuter()();   0
-uniqueIntegerOuter()();   0
-uniqueIntegerOuter()();   0
+uniqueIntegerOuter()();   => 0
+uniqueIntegerOuter()();   => 0
+uniqueIntegerOuter()();   => 0
 ```
 
  ## Free and Bound Variables
