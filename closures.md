@@ -1,8 +1,8 @@
  ## Closure & Variable Binding Examples
 
  * Starting with a closure as an IIFE  
- * The variable, ```counter```, becomes bound to the inner function when it is returned.  
- * The outer function, is executed once and  ```counter``` is declared and initialized.  
+ * The variable, ```counter``` becomes bound to the inner function when it is returned.  
+ * The outer function is executed once and  ```counter``` is declared and initialized.  
  * The inner function is returned with ```counter``` bound to it.
 ```
 let uniqueInteger = (function() {
