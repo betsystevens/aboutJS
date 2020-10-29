@@ -14,9 +14,9 @@ let uniqueIntegerInner = (function() {
 
  * Invoking the inner function multiple times, illustrates the closure over the outer function's variable.  
 ```
-uniqueIntegerInner();   0
-uniqueIntegerInner();   1
-uniqueIntegerInner();   2
+uniqueIntegerInner();   => 0
+uniqueIntegerInner();   => 1
+uniqueIntegerInner();   => 2
 ```
  * Same results here, not using an IIFE  
 ```
